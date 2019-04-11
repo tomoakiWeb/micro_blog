@@ -50,7 +50,7 @@ class BlogUpdateView(LoginRequiredMixin,UpdateView):
       url = reverse_lazy("detail", kwargs= {"pk": blog_pk})
       return url
 
-    def form_vaid(self, form):
+    def form_valid(self, form):
       messages.success(self.request, "更新されました")
       return super().form_valid(form)
 
